@@ -1,0 +1,72 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    }
+   
+#game {
+    text-align: center;
+}
+
+#board {
+    display: grid;
+    grid-template: repeat(3, 100px) / repeat(3, 100px);
+    gap: 5px;
+}
+
+.cell{
+    background-color: #c8baba;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    cursor: pointer;
+}
+.winning-cell {
+    background-color: lightgreen; /* or any other shade of green you prefer */
+}
+.container{
+    position: relative;
+}
+
+.pokemon{
+    position: absolute;
+    animation: movepokemon 23s linear infinite, zoompokemon -44s linear infinite;
+}
+.hidden{
+    display: none;
+}
+
+#status {
+    margin-bottom: 20px;
+}
+
+#restart {
+    margin-top: 20px;
+}
+
+@keyframes movepokemon{
+    0%, 100% {
+        transform: translate(-50%, -50%);
+    }
+    25% {
+        transform: translate(-30%, -30%);
+    }
+    50% {
+        transform: translate(30%, 30%);
+    }
+    75% {
+        transform: translate(-30%, 30%);
+    }
+}
+
+@keyframes zoompokemon {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
